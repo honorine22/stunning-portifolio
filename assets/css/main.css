@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.introimage--bg {
+  background-image: url('/assets/headerGIF.png');
+  background-size: cover;
+  /* height: 80px; */
+}
