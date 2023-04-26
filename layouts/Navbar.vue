@@ -7,7 +7,7 @@ shadow-sm
 dark:text-white dark:bg-gray-800
 sepia:sepia
 ">
-        <div class="px-8 md:px-20 lg:px-20 py-2 mx-auto">
+        <div class="px-5 md:px-10 lg:px-20 py-2 mx-auto">
             <div class="
 lg:flex lg:items-center
 md:justify-between md:flex

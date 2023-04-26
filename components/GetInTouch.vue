@@ -1,8 +1,9 @@
 <template>
   <div id="contact" class="
-      dark:text-white dark:bg-gray-800
+      dark:text-white text-[#020D45] dark:bg-gray-800
       sepia:sepia sepia:text-white
       grid grid-cols-1
+      text-sm
       js-show-on-scroll
       md:grid-cols-2
       lg:grid-cols-2
@@ -18,87 +19,86 @@
             dark:text-white
             text-center
             py-8
-            text-xl
+            text-md
           ">
         Get In Touch with me
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-2">
         <div class="col-span-2 md:col-span-1">
+          <label for="firstName">First Name</label>
           <input class="
             w-full
             h-10
-            px-3
-            placeholder-gray-500
             dark:bg-gray-700 dark:text-white
             shadow-sm
             border
             rounded-xl
+            px-4
             focus:outline-none
-          " type="text" v-model="firstName.value.value" name="firstName" placeholder="First Name" />
+          " type="text" v-model="firstName.value.value" name="firstName" />
           <span v-show="errors.firstName" class="text-red-500 dark:text-red-800 sepia:text-white">
             {{ errors.firstName }}
           </span>
         </div>
         <div class="col-span-2 md:col-span-1">
+          <label for="lastName">Last Name</label>
           <input class="
             w-full
             h-10
-            px-3
-            placeholder-gray-500
+            px-4
             dark:bg-gray-700 dark:text-white
             shadow-sm
             border
             rounded-xl
             focus:outline-none
-          " type="text" v-model="lastName.value.value" name="lastName" placeholder="Last Name" />
+          " type="text" v-model="lastName.value.value" name="lastName" />
           <span v-show="errors.lastName" class="text-red-500 dark:text-red-800 sepia:text-white">
             {{ errors.lastName }}
           </span>
         </div>
         <div class="col-span-2 md:col-span-1">
+          <label for="email">Email</label>
           <input class="
             w-full
             h-10
-            px-3
-            placeholder-gray-500
+            px-4
             dark:bg-gray-700 dark:text-white
             shadow-sm
             border
             rounded-xl
             focus:outline-none
-          " type="text" v-model="email.value.value" name="email" placeholder="Email" />
+          " type="text" v-model="email.value.value" name="email" />
           <span v-show="errors.email" class="text-red-500 dark:text-red-800 sepia:text-white">
             {{ errors.email }}
           </span>
         </div>
         <div class="col-span-2 md:col-span-1">
+          <label for="phone">Phone Number</label>
           <input class="
             w-full
             h-10
-            px-3
-            placeholder-gray-500
+            px-4
             dark:bg-gray-700 dark:text-white
             shadow-sm
             border
             rounded-xl
             focus:outline-none
-          " type="tel" v-model="phone.value.value" name="phone" placeholder="Phone" />
+          " type="tel" v-model="phone.value.value" name="phone" />
           <span v-show="errors.phone" class="text-red-500 dark:text-red-800 sepia:text-white">
             {{ errors.phone }}
           </span>
         </div>
         <div class="col-span-2">
+          <label for="message">Message</label>
           <textarea cols="10" rows="3" v-model="message.value.value" name="message" class="
-                  placeholder-gray-500
                   dark:bg-gray-700 dark:text-white
                   shadow-sm
                   border
                   rounded-xl
                   focus:outline-none
                   p-4
-                  md:text-xl
                   w-full
-                " placeholder="Message"></textarea>
+                "></textarea>
           <span v-show="errors" class="text-red-500 dark:text-red-800 sepia:text-white">
             {{ errors.message }}
           </span>
@@ -117,11 +117,10 @@ import { useForm, useField } from 'vee-validate';
 import * as yup from 'yup';
 import Button from './atom/Button.vue';
 import InputComponent from './atom/InputComponent.vue';
+import axios from 'axios';
+import { BASE_URL } from '../BaseUrl';
 import Swal from 'sweetalert2'
-// import axios from 'axios';
-import { defineComponent, ref, computed } from 'vue';
-// import { BASE_URL } from '~/BaseUrl';
-import { $axios } from '@nuxtjs/axios'
+import { defineComponent, computed } from 'vue';
 export default defineComponent({
   name: 'GetInTouch',
   components: {
@@ -159,7 +158,7 @@ export default defineComponent({
 
     // 9. Define the addNewComment method
     const addNewComment = handleSubmit((values) => {
-      $axios.post(`${BASE_URL}/comments`, {
+      axios.post(`${BASE_URL}/comments`, {
         firstName: values.firstName,
         lastName: values.lastName,
         email: values.email,

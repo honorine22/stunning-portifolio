@@ -4,7 +4,7 @@
     <Navbar />
     <div class="px-6 md:px-20 lg:px-20">
       <div class="block md:flex lg:flex">
-        <div class="pt-32">
+        <div class="pt-24">
           <p class="w-full md:w-1/2 lg:w-1/2 text-sm">With great enthusiasm and a wealth of my expertise, I am at your
             service and ready
             to assist
@@ -36,7 +36,7 @@
           </div>
           <div class="col-span-2 md:col-span-1">
             <label for="service">Service</label>
-            <select class="w-full h-10 px-3 shadow bg-white
+            <select class="w-full h-10 px-3 shadow-sm bg-white
                     dark:bg-gray-700 dark:text-white
                     border rounded-xl focus:outline-none
                   " name="service" v-model="service.value.value">
@@ -73,7 +73,6 @@
                   rounded-xl
                   focus:outline-none
                   p-4
-                  md:text-xl
                   w-full
                 "></textarea>
             <span v-show="errors.description" class="text-red-500 dark:text-red-800 sepia:text-white">
@@ -101,11 +100,11 @@ import Button from '~/components/atom/Button.vue';
 import InputComponent from '~/components/atom/InputComponent.vue';
 import Swal from 'sweetalert2'
 import Navbar from '~/layouts/Navbar.vue';
-import axios from 'axios';
 import Map from '~/components/Map.vue';
 import Footer from '~/components/Footer.vue';
 import { defineComponent, computed } from 'vue';
-import { BASE_URL } from '~/BaseUrl';
+import axios from 'axios';
+import { BASE_URL } from '../BaseUrl';
 export default defineComponent({
   name: 'GetInTouch',
   components: {

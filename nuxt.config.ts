@@ -1,18 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-// export default defineNuxtConfig({
-//     css: [
-//         '~/assets/css/main.css'
-//     ],
-//     postcss: {
-//         plugins: {
-//             tailwindcss: {},
-//             autoprefixer: {},
-//         },
-//     },
-//     build: {
-//         transpile: ["vee-validate/dist/rules"]
-//     }
-// });
 import { NuxtConfig } from '@nuxt/types'
 
 const nuxtConfig: NuxtConfig = {
@@ -34,17 +19,22 @@ const nuxtConfig: NuxtConfig = {
     build: {
         transpile: ["vee-validate/dist/rules"]
     },
+    server: {
+        port: 5000, // set the port for the development server
+    },
     axios: {
-        baseURL: 'http://localhost:5000'
+        baseURL: process.env.NODE_ENV === 'production'
+        ? process.env.BACKEND_URL_PROD || "https://igiraneza-port-backend.onrender.com"
+        : process.env.BACKEND_URL_DEV || "http://localhost:5000"
     },
     publicRuntimeConfig: {
         axios: {
-            browserBaseURL: process.env.BROWSER_BASE_URL
+            browserBaseURL: process.env.BACKEND_URL_PROD
         }
     },
     privateRuntimeConfig: {
         axios: {
-            baseURL: process.env.BASE_URL
+            baseURL: process.env.BACKEND_URL_DEV
         }
     },
 }
