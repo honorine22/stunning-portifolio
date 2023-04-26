@@ -1,40 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
-    css: [
-        '~/assets/css/main.css'
-    ],
-    postcss: {
-        plugins: {
-            tailwindcss: {},
-            autoprefixer: {},
-        },
-    },
-    // sweetalert: {
-    //     confirmButtonColor: '#020D45',
-    //     cancelButtonColor: '#F27474'
-    // },
-    build: {
-        transpile: ["vee-validate/dist/rules"]
-    }
-});
-// import MyNuxtConfig from './nuxt-config'
-
-// const nuxtConfig: MyNuxtConfig = {
-//     // Other configuration options
-//     // toast: {
-//     //     position: 'top-right',
-//     //     duration: 3000,
-//     //     register: [ // Register custom toasts
-//     //     {
-//     //       name: 'my-error',
-//     //       message: 'Oops...Something went wrong',
-//     //       options: {
-//     //         type: 'error'
-//     //       }
-//     //     }
-//     //   ]
-//     //     // Add other properties as needed
-//     // },
+// export default defineNuxtConfig({
 //     css: [
 //         '~/assets/css/main.css'
 //     ],
@@ -44,11 +9,44 @@ export default defineNuxtConfig({
 //             autoprefixer: {},
 //         },
 //     },
+//     build: {
+//         transpile: ["vee-validate/dist/rules"]
+//     }
+// });
+import { NuxtConfig } from '@nuxt/types'
 
-//     modules: [
-//         '@tailvue/nuxt',
-//         '@nuxtjs/axios'
-//     ]
-// }
+const nuxtConfig: NuxtConfig = {
+    css: [
+        '~/assets/css/main.css'
+    ],
+    link: [
+        {
+            rel: "stylesheet",
+            href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap'
+        }
+    ],
+    postcss: {
+        plugins: {
+            tailwindcss: {},
+            autoprefixer: {},
+        },
+    },
+    build: {
+        transpile: ["vee-validate/dist/rules"]
+    },
+    axios: {
+        baseURL: 'http://localhost:5000'
+    },
+    publicRuntimeConfig: {
+        axios: {
+            browserBaseURL: process.env.BROWSER_BASE_URL
+        }
+    },
+    privateRuntimeConfig: {
+        axios: {
+            baseURL: process.env.BASE_URL
+        }
+    },
+}
 
-// export default nuxtConfig
+export default nuxtConfig

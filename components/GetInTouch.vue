@@ -118,9 +118,10 @@ import * as yup from 'yup';
 import Button from './atom/Button.vue';
 import InputComponent from './atom/InputComponent.vue';
 import Swal from 'sweetalert2'
-import axios from 'axios';
+// import axios from 'axios';
 import { defineComponent, ref, computed } from 'vue';
-import { BASE_URL } from '~/BaseUrl';
+// import { BASE_URL } from '~/BaseUrl';
+import { $axios } from '@nuxtjs/axios'
 export default defineComponent({
   name: 'GetInTouch',
   components: {
@@ -158,7 +159,7 @@ export default defineComponent({
 
     // 9. Define the addNewComment method
     const addNewComment = handleSubmit((values) => {
-      axios.post(`${BASE_URL}/comments`, {
+      $axios.post(`${BASE_URL}/comments`, {
         firstName: values.firstName,
         lastName: values.lastName,
         email: values.email,
