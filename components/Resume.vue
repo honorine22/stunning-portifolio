@@ -27,9 +27,7 @@
           </p>
         </div>
       </div>
-      <nuxt-link to="/contacts">
-        <Button title="Download Resume" :handleClick="viewHandler" />
-      </nuxt-link>
+      <Button title="Download Resume" :handleClick="viewHandler" />
     </div>
     <div class="flex justify-end pt-8 items-center">
       <img src="/profile.png" alt="Profile" />
@@ -40,6 +38,9 @@
 <script>
 import { messages } from "@/assets/data.js";
 import Button from "./atom/Button.vue";
+import axios from "axios";
+import { BASE_URL } from "~/BaseUrl";
+import Swal from "sweetalert2";
 export default {
   data() {
     return {
@@ -51,16 +52,15 @@ export default {
   },
   methods: {
     viewHandler() {
-      this.$axios
-        .get("/pdf", { responseType: "blob" })
+      axios.get(`${BASE_URL}/pdf`, { responseType: "blob" })
         .then((response) => {
           const file = new Blob([response.data], { type: "application/pdf" });
           const fileURL = URL.createObjectURL(file);
           window.open(fileURL);
-          swal("Success", "Resume Opened In New Tab", "success");
+          Swal.fire("Success", "Resume Opened In New Tab", "success");
         })
         .catch((error) => {
-          swal("Error", "Something Went wrong, Try Again.", "error");
+          Swal.fire("Error", "Something Went wrong, Try Again.", "error");
           console.log(error);
         });
     },

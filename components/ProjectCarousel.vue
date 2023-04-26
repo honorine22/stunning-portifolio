@@ -1,9 +1,10 @@
 <template>
-  <div class="my-16 js-show-on-scroll bg-[#F1F4F7] px-5 md:px-10 lg:px-20">
+  <div id="port" class="my-16 js-show-on-scroll bg-[#F1F4F7] px-5 md:px-10 lg:px-20">
     <swiper class="py-8" :modules="modules" :slides-per-view="3" :space-between="50" navigation
       :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper" @slideChange="onSlideChange"
       effect="fade">
-      <swiper-slide v-for="background in backgrounds" :key="background.id">
+      <swiper-slide class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3" v-for="background in backgrounds"
+        :key="background.id">
         <div class="relative flex items-center justify-center">
           <img :src="background.backgroundImage" />
         </div>

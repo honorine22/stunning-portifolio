@@ -18,9 +18,7 @@
           <img src="@/assets/arrow.png" alt="Profile" />
         </div>
         <div>
-          <nuxt-link to="/contacts">
-            <Button title="HIRE ME" />
-          </nuxt-link>
+          <Button :handleClick="navigateToAboutPage" title="HIRE ME" />
         </div>
       </div>
       <p class="pt-4">
@@ -41,6 +39,11 @@ export default {
   name: "Hire",
   components: {
     Button
+  },
+  methods: {
+    navigateToAboutPage() {
+      this.$router.push('/contacts')
+    }
   }
 };
 </script>

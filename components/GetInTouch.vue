@@ -118,7 +118,9 @@ import * as yup from 'yup';
 import Button from './atom/Button.vue';
 import InputComponent from './atom/InputComponent.vue';
 import Swal from 'sweetalert2'
+import axios from 'axios';
 import { defineComponent, ref, computed } from 'vue';
+import { BASE_URL } from '~/BaseUrl';
 export default defineComponent({
   name: 'GetInTouch',
   components: {
@@ -154,12 +156,9 @@ export default defineComponent({
       return errors.value.firstName || errors.value.lastName || errors.value.email, errors.value.phone || errors.value.message
     })
 
-    const commentLoading = ref(false);
-    const addLoading = ref(false);
-
     // 9. Define the addNewComment method
     const addNewComment = handleSubmit((values) => {
-      this.$axios.post('/comments', {
+      axios.post(`${BASE_URL}/comments`, {
         firstName: values.firstName,
         lastName: values.lastName,
         email: values.email,
@@ -192,9 +191,7 @@ export default defineComponent({
       submitCount,
       addNewComment,
       errors,
-      isDisabled,
-      commentLoading,
-      addLoading
+      isDisabled
     };
   },
 });

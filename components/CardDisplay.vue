@@ -1,5 +1,5 @@
 <template>
-  <transition name="card" mode="out-in">
+  <transition id="services" name="card" mode="out-in">
     <div class="px-5 md:px-10 lg:px-20 dark:text-white py-4 sepia:text-white dark:bg-gray-800 sepia:sepia">
       <div class="text-sm text-[#0C0528]" v-if="cardsSection.id == 2">
         <h4 class="text-center py-2">{{ cardsSection.title }}</h4>

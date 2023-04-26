@@ -1,12 +1,12 @@
 <template>
     <button :type="type"
-        class="bg-blue-500 text-white text-center rounded-md px-8 py-3 hover:bg-blue-700 focus:outline-none" :class="{
+        class="bg-blue-500 px-6 py-3 text-white text-center rounded-md hover:bg-blue-700 focus:outline-none" :class="{
                 'capitalize': capitalize,
                 'uppercase': uppercase,
                 'text-xs': true,
                 'flex': true,
                 'items-center': true,
-                'gap-5': true,
+                'gap-5': true
             }" @click.prevent="executeHandleClick">
         {{ title }}
         {{ icon }}

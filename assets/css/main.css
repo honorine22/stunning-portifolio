@@ -22,6 +22,10 @@ html {
   background-repeat: round;
 }
 
+.contact--bg{
+  background-image: url('/service.png');
+}
+
 .footer--bg {
   background-image: url('/footer.png');
   background-size: cover;

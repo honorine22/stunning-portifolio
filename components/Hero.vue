@@ -1,6 +1,5 @@
 <template>
-  <div id="me"
-    class="dark:text-white md:flex justify-around px-8 md:px-16">
+  <div id="me" class="dark:text-white md:flex justify-around px-8 md:px-16">
     <div class="flex flex-col justify-center pt-16">
       <h1 class="text-lg text-[#42A5F5] font-bold uppercase">I AM HONORINE IGIRANEZA.</h1>
       <h1 class="text-lg font-bold py-2">A FULL STACK DEVELOPER</h1>
@@ -9,7 +8,7 @@
         project, at any hour.
       </p>
       <nuxt-link to="/contacts">
-        <Button title="Hire Me" />
+        <Button :handleClick="navigateToAboutPage" title="Hire Me" />
       </nuxt-link>
     </div>
     <div class="md:pt-20 pt-4 flex justify-center">
@@ -22,6 +21,11 @@ import Button from './atom/Button.vue';
 export default {
   components: {
     Button
+  },
+  methods: {
+    navigateToAboutPage() {
+      this.$router.push('/contacts')
+    }
   }
 };
 </script>

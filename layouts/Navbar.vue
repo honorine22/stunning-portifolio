@@ -63,9 +63,7 @@ dark:hover:text-indigo-400
 ">
                             {{ item.text }}</NuxtLink>
                     </div>
-                    <NuxtLink to="/contacts">
-                        <Button title="Hire Me" :class="isOpen ? 'ml-2' : ''" />
-                    </NuxtLink>
+                    <Button :handleClick="navigateToAboutPage" title="Hire Me" :class="isOpen ? 'ml-2' : ''" />
                 </div>
                 <!-- <div :class="isOpen ? 'block px-16' : 'hidden'"
 class="px-2 sm:grid sm:grid-cols-1 sm:hover:text-clip sm:truncate block">
@@ -86,6 +84,11 @@ export default {
     components: {
         // SwitchTheme
         Button
+    },
+    methods: {
+        navigateToAboutPage() {
+            this.$router.push('/contacts')
+        }
     },
     data() {
         return {
