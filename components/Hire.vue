@@ -1,34 +1,38 @@
 <template>
-  <!-- <div class="
-      flex justify-center"> -->
   <div class="
       dark:text-white sepia:text-white dark:bg-[#F0F5F7] 
       sepia:sepia sepia:text-white
-      bg-[#F0F5F7]
-      mt-4
+      my-8
       text-sm
       shadow
+      bg-[#F1F4F7]
       text-[#0C0528]
-      px-32 md:px-48 lg:px-52
       grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2
+      px-6 md:px-20 lg:px-20
+      js-show-on-scroll
     ">
-    <!-- flex justify-center  -->
-    <div class="py-4">
-      <h2 class="font-bold">Have Any project in Mind?</h2>
-      <img class="" src="@/assets/arrow.png" alt="Profile" />
-
+    <div class="pt-8">
+      <div class="flex justify-between">
+        <div>
+          <h2 class="font-bold">Have Any project in Mind?</h2>
+          <img src="@/assets/arrow.png" alt="Profile" />
+        </div>
+        <div>
+          <nuxt-link to="/contacts">
+            <Button title="HIRE ME" />
+          </nuxt-link>
+        </div>
+      </div>
       <p class="pt-4">
-        I’m here to help you. If you need any kind of a website to develop and
-        design, then you can tell me. Check my portifolio.
+        Looking for a skilled developer to take your website to the next level? Look no further! I offer expert website
+        design and development services, as well as a range of software solutions. Check out my portfolio and let's
+        discuss your project today!
       </p>
     </div>
-    <div class="flex justify-center items-center">
-      <nuxt-link to="/contacts">
-        <Button title="HIRE ME" />
-      </nuxt-link>
+    <div class="flex items-center justify-end">
+      <img src="/hire.png" alt="Hire Me">
     </div>
   </div>
-  <!-- </div> -->
 </template>
 
 <script>

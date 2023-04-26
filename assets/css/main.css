@@ -15,8 +15,14 @@
 html {
   scroll-behavior: smooth;
 }
+
 .introimage--bg {
   background-image: url('/assets/headerGIF.png');
+  background-size: contain;
+  background-repeat: round;
+}
+
+.footer--bg {
+  background-image: url('/footer.png');
   background-size: cover;
-  /* height: 80px; */
 }

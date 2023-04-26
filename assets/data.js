@@ -9,21 +9,21 @@ export const serviceCards = [
         image: "programming.png",
         title: "Web Development",
         description:
-          "The work involved in developing a Web site for the Internet or an intranet. It can range from developing a simple single static page of plain text to complex web applications.",
+          "Looking to establish your online presence? Our web development services can bring your website to life - from sleek, static pages to powerful, feature-packed web applications.",
       },
       {
         id: 2,
         image: "cpu.png",
         title: "Embedded Engineer",
         description:
-          "Computer software, written to control machines or devices that are not typically thought of as computers, commonly known as embedded systems",
+          "Transform your devices or machines into smart, self-sufficient entities with our embedded systems software. Designed to integrate seamlessly, it makes them more efficient without any human intervention.",
       },
       {
         id: 3,
         image: "software-development.png",
         title: "Design & Software Development",
         description:
-          "Process of analyzing user requirements and then designing, building, and testing software application.",
+          "Our service includes a comprehensive process of analyzing your specific requirements and crafting bespoke software applications through design, construction, and rigorous testing.",
       },
     ],
   },
@@ -35,10 +35,10 @@ export const serviceCards = [
       {
         id: 4,
         image: "meetup.png",
-        title: "Meetup App",
+        title: "Music App",
         btnMargin: "mt-4",
         description:
-          "This is an application developend using Vue, Vuex, sockets and bulma technologies. It enables a user to manage the meetings, posts on the meeting and it's threads.",
+          "This innovative app not only allows you to play your favorite tunes but also enables you to connect with others through music. With the latest technologies like Vue, Vuex, sockets, PWA, and tailwind, this app provides a seamless and interactive experience",
         tech_used_title: "Technology Used",
         gitViewLink: "",
         glink: "https://github.com/honorine22/vue-meetup-starter.git",
@@ -57,7 +57,7 @@ export const serviceCards = [
         title: "Perusal App",
         btnMargin: "pt-16",
         description:
-          "A web-based app that assist users to share and access research paper works.",
+          "Discover, share, and access research papers effortlessly with a user-friendly web-based app. Revolutionize your research game and join the digital age.",
         tech_used_title: "Technology Used",
         gitViewLink: "fff",
         glink: "https://github.com/Perusal-Rw/Dashboard.git",
@@ -74,9 +74,9 @@ export const serviceCards = [
         id: 6,
         image: "shoppy.png",
         title: "Shoppy App",
-        btnMargin: "mt-8",
+        btnMargin: "pt-8",
         description:
-          "E-commerce website that allows  people to buy and sell tangible goods, digital products. It is built using  react technology and redux.",
+          "Enter a virtual world of buying and selling tangible goods and digital products with our E-commerce website! Built with React technology and Redux, it streamlines transactions and enhances user experience.",
         tech_used_title: "Technology Used",
         gitViewLink: "ff",
         glink: "https://github.com/ShoppyOpenRca/React-E-Commerce-V2.git",
@@ -154,20 +154,12 @@ export const messages = [
   {
     id: 7,
     from: "Rwanda Coding Academy",
-    message: `I studied about programming language
-                    and contributed on some projects using
-                    those languages. Check on my github
-                    account.`,
-    title: "Software engineer"
+    message: `With a passion for programming languages, I've honed my skills and contributed to various projects, all of which are showcased on my GitHub account.`
   },
   {
     id: 8,
     from: "Coursera",
-    message: `I earned certificates related to web
-                    development using various
-                    framework like ReactJs and design
-                    thinking for innovation.`,
-    title: "Software engineer"
+    message: `As a certified Google African Developer with expertise in building complex systems using various frameworks, I also cultivated a creative mindset through design thinking for innovative solutions.`
   },
   {
     id: 9,

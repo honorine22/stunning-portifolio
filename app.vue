@@ -1,29 +1,21 @@
 <template>
   <div class="introimage--bg">
-    <!-- <div class="dark:text-white dark:bg-gray-800 sepia:text-white sepia:sepia">
-    <ClientOnly>
-      <GetInTouch />
-      <Hire />
-      <Footer /> -->
     <Navbar />
     <Hero />
   </div>
-  <div class="px-5 md:px-10 lg:px-20">
-    <CardDisplay v-for="cardInfo in cardsInfo" :key="cardInfo.id" :cardsSection="cardInfo" />
-
-    <Resume />
-  </div>
+  <CardDisplay v-for="cardInfo in cardsInfo" :key="cardInfo.id" :cardsSection="cardInfo" />
+  <ProjectCarousel />
+  <Resume />
   <Hire />
   <GetInTouch />
-  <!-- <NuxtWelcome /> -->
-  <!-- </ClientOnly> -->
-  <!-- </div> -->
+  <Footer />
 </template>
 <script>
 import '~/assets/css/main.css'
 import Navbar from '~/layouts/Navbar.vue';
 import Hero from '~/components/Hero.vue';
 import CardDisplay from '~/components/CardDisplay.vue';
+import Footer from './components/Footer.vue';
 import GetInTouch from '~/components/GetInTouch.vue';
 import Resume from '~/components/Resume.vue';
 import Hire from '~/components/Hire.vue';
@@ -36,7 +28,8 @@ export default {
     GetInTouch,
     CardDisplay,
     Resume,
-    ProjectCarousel
+    ProjectCarousel,
+    Footer
   },
   data() {
     return {

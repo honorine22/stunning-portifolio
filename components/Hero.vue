@@ -1,13 +1,13 @@
 <template>
-  <div id="me" class="bg-blue-100 h-100 dark:text-white dark:bg-gray-900 sepia:sepia md:flex justify-around">
+  <div id="me"
+    class="dark:text-white md:flex justify-around px-8 md:px-16">
     <div class="flex flex-col justify-center pt-16">
-      <h1 class="text-xl">I AM HONORINE IGIRANEZA.</h1>
-      <h1 class="text-xl font-black">A FULL STACK DEVELOPER</h1>
-      <p class="text-md py-4">
-        I am a full stack developer, open source enthusiast
-        and willing to work anytime.
+      <h1 class="text-lg text-[#42A5F5] font-bold uppercase">I AM HONORINE IGIRANEZA.</h1>
+      <h1 class="text-lg font-bold py-2">A FULL STACK DEVELOPER</h1>
+      <p class="text-sm pb-4 w-100 md:w-1/2 lg:w-1/2">
+        As a versatile and dynamic full stack developer, I am eager and prepared to lend my skills and expertise to any
+        project, at any hour.
       </p>
-
       <nuxt-link to="/contacts">
         <Button title="Hire Me" />
       </nuxt-link>

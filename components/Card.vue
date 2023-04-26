@@ -8,8 +8,7 @@
                 js-show-on-scroll
                 py-4
                 rounded-md
-                sm:shadow-md
-                shadow-lg
+                shadow
                 h-full
                 bg-white
               dark:text-white sepia:text-white dark:bg-gray-800 sepia:sepia

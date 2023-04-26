@@ -3,12 +3,15 @@
       dark:text-white dark:bg-gray-800
       sepia:sepia sepia:text-white
       grid grid-cols-1
+      js-show-on-scroll
       md:grid-cols-2
-      mx-auto md:px-0 lg:px-64
+      lg:grid-cols-2
+      px-5 md:px-10 lg:px-20
     ">
-    <img class="md:mt-16 mx-2 md:mx-0 lg:mx-4" src="/contact_image.png" alt="Contact Image" />
-    <!-- <ValidationObserver ref="form" class="mt-8"> -->
-    <form @submit.prevent="addNewComment()" class="w-full my-4">
+    <div class="flex justify-start items-center">
+      <img src="/contact_image.png" class="" alt="Contact Image" />
+    </div>
+    <form @submit.prevent="addNewComment()" class="w-full">
       <h2 class="
             text-black
             sepia:text-white
@@ -19,89 +22,76 @@
           ">
         Get In Touch with me
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-2 gap-y-4 px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         <div class="col-span-2 md:col-span-1">
-          <!-- <ValidationProvider v-slot="{ errors, touched }" name="firstName" rules="required"> -->
           <input class="
-                  w-full
-                  h-10
-                  px-3
-                  placeholder-gray-500
-                  dark:bg-gray-700 dark:text-white
-                  shadow
-                  border
-                  rounded-xl
-                  focus:outline-none
-                " type="text" v-model="commentDetails.firstName" placeholder="First Name" />
-          <!-- <span v-show="errors.length > 0 && touched" class="text-red-500 dark:text-red-800 sepia:text-white">
-                {{ errors[0] }}
-              </span>
-            </ValidationProvider> -->
+            w-full
+            h-10
+            px-3
+            placeholder-gray-500
+            dark:bg-gray-700 dark:text-white
+            shadow-sm
+            border
+            rounded-xl
+            focus:outline-none
+          " type="text" v-model="firstName.value.value" name="firstName" placeholder="First Name" />
+          <span v-show="errors.firstName" class="text-red-500 dark:text-red-800 sepia:text-white">
+            {{ errors.firstName }}
+          </span>
         </div>
-
         <div class="col-span-2 md:col-span-1">
-          <!-- <ValidationProvider v-slot="{ errors, touched }" name="lastName" rules="required"> -->
           <input class="
-                  w-full
-                  h-10
-                  px-3
-                  placeholder-gray-500
-                  dark:bg-gray-700 dark:text-white
-                  shadow
-                  border
-                  rounded-xl
-                  focus:outline-none
-                " type="text" v-model="commentDetails.lastName" placeholder="Last Name" />
-          <!-- <span v-show="errors.length > 0 && touched" class="text-red-500 dark:text-red-800 sepia:text-white">
-                {{ errors[0] }}
-              </span>
-            </ValidationProvider> -->
+            w-full
+            h-10
+            px-3
+            placeholder-gray-500
+            dark:bg-gray-700 dark:text-white
+            shadow-sm
+            border
+            rounded-xl
+            focus:outline-none
+          " type="text" v-model="lastName.value.value" name="lastName" placeholder="Last Name" />
+          <span v-show="errors.lastName" class="text-red-500 dark:text-red-800 sepia:text-white">
+            {{ errors.lastName }}
+          </span>
         </div>
-
         <div class="col-span-2 md:col-span-1">
-          <!-- <ValidationProvider v-slot="{ errors, touched }" name="email" rules="required|email"> -->
           <input class="
-                  w-full
-                  h-10
-                  px-3
-                  placeholder-gray-500
-                  dark:bg-gray-700 dark:text-white
-                  shadow
-                  border
-                  rounded-xl
-                  focus:outline-none
-                " type="email" v-model="commentDetails.email" placeholder="Email" />
-          <!-- <span v-show="errors.length > 0 && touched" class="text-red-500 dark:text-red-800 sepia:text-white">
-                {{ errors[0] }}
-              </span>
-            </ValidationProvider> -->
+            w-full
+            h-10
+            px-3
+            placeholder-gray-500
+            dark:bg-gray-700 dark:text-white
+            shadow-sm
+            border
+            rounded-xl
+            focus:outline-none
+          " type="text" v-model="email.value.value" name="email" placeholder="Email" />
+          <span v-show="errors.email" class="text-red-500 dark:text-red-800 sepia:text-white">
+            {{ errors.email }}
+          </span>
         </div>
-
         <div class="col-span-2 md:col-span-1">
-          <!-- <ValidationProvider v-slot="{ errors, touched }" name="phoneNo" rules="required|phone"> -->
           <input class="
-                  w-full
-                  h-10
-                  px-3
-                  placeholder-gray-500
-                  dark:bg-gray-700 dark:text-white
-                  shadow
-                  border
-                  rounded-xl
-                  focus:outline-none
-                " type="text" v-model="commentDetails.phoneNo" placeholder="Phone Number" />
-          <!-- <span v-show="errors.length > 0 && touched" class="text-red-500 dark:text-red-800 sepia:text-white">
-                {{ errors[0] }}
-              </span>
-            </ValidationProvider> -->
+            w-full
+            h-10
+            px-3
+            placeholder-gray-500
+            dark:bg-gray-700 dark:text-white
+            shadow-sm
+            border
+            rounded-xl
+            focus:outline-none
+          " type="tel" v-model="phone.value.value" name="phone" placeholder="Phone" />
+          <span v-show="errors.phone" class="text-red-500 dark:text-red-800 sepia:text-white">
+            {{ errors.phone }}
+          </span>
         </div>
-
         <div class="col-span-2">
-          <!-- <ValidationProvider v-slot="{ errors, touched }" name="message" rules="required"> -->
-          <textarea cols="10" rows="6" v-model="commentDetails.message" class="
+          <textarea cols="10" rows="3" v-model="message.value.value" name="message" class="
                   placeholder-gray-500
                   dark:bg-gray-700 dark:text-white
-                  shadow
+                  shadow-sm
                   border
                   rounded-xl
                   focus:outline-none
@@ -109,127 +99,105 @@
                   md:text-xl
                   w-full
                 " placeholder="Message"></textarea>
-          <!-- <span v-show="errors.length > 0 && touched" class="text-red-500 dark:text-red-800 sepia:text-white">
-                {{ errors[0] }}
-              </span>
-            </ValidationProvider> -->
-        </div>
-
-        <div class="col-span-2 text-left">
-          <button :disabled="isDisabled" :class="isDisabled
-              ? 'bg-gray-500 dark:bg-gray-800 dark:border-white border dark:hover:bg-blue-900 hover:bg-blue-900'
-              : 'bg-blue-400'
-            " class="
-                py-3
-                px-6
-                shadow
-                rounded-full
-                text-white
-                font-bold
-                w-full
-                sm:w-32
-              ">
-            Submit
-          </button>
+          <span v-show="errors" class="text-red-500 dark:text-red-800 sepia:text-white">
+            {{ errors.message }}
+          </span>
         </div>
       </div>
+      <div class="pt-2">
+        <!-- <button :disabled="isDisabled" type="submit">Submit</button> -->
+        <Button :handleClick="addNewComment" title="Submit" :disabled="isDisabled" />
+      </div>
     </form>
-    <!-- </ValidationObserver> -->
   </div>
 </template>
 
 <script>
-// import { useToast, useModal } from 'tailvue'
-// const $toast = useToast()
-// const $modal = useModal()
-export default {
-  data() {
+import { useForm, useField } from 'vee-validate';
+import * as yup from 'yup';
+import Button from './atom/Button.vue';
+import InputComponent from './atom/InputComponent.vue';
+import Swal from 'sweetalert2'
+import { defineComponent, ref, computed } from 'vue';
+export default defineComponent({
+  name: 'GetInTouch',
+  components: {
+    InputComponent,
+    Button
+  },
+  setup() {
+    const schema = yup.object({
+      firstName: yup.string().required(),
+      lastName: yup.string().required(),
+      email: yup.string().email().required(),
+      phone: yup.string().required().min(12),
+      message: yup.string().required()
+    })
+    const { errors, resetForm, handleSubmit, isSubmitting, submitCount } = useForm({
+      validationSchema: schema,
+      initialValues: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+      }
+    })
+    const firstName = useField('firstName');
+    const lastName = useField('lastName');
+    const email = useField('email');
+    const phone = useField('phone');
+    const message = useField('message');
+
+    // 8. Define a computed property to check if the form is disabled
+    const isDisabled = computed(() => {
+      return errors.value.firstName || errors.value.lastName || errors.value.email, errors.value.phone || errors.value.message
+    })
+
+    const commentLoading = ref(false);
+    const addLoading = ref(false);
+
+    // 9. Define the addNewComment method
+    const addNewComment = handleSubmit((values) => {
+      this.$axios.post('/comments', {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        phoneNo: values.phone,
+        message: values.message
+      }).then((response) => {
+        console.log(response);
+        Swal.fire(
+          'Great job!',
+          'Comment Submitted Successfully!',
+          'success'
+        )
+        resetForm();
+        // return true;
+      }).catch((error) => {
+        console.log(error.error);
+        Swal.fire(
+          'Please Try Again',
+          "Something went wrong",
+          'error'
+        )
+        resetForm();
+      })
+    });
+
     return {
-      commentDetails: {
-        firstName: "",
-        lastName: "",
-        email: "",
-        phoneNo: "",
-        message: "",
-      },
-      commentLoading: false,
-      addLoading: false,
+      resetForm,
+      firstName, lastName, email, phone, message,
+      isSubmitting,
+      submitCount,
+      addNewComment,
+      errors,
+      isDisabled,
+      commentLoading,
+      addLoading
     };
   },
-  computed: {
-    isDisabled: function () {
-      if (
-        this.commentDetails.firstName === "" ||
-        this.commentDetails.lastName === "" ||
-        this.commentDetails.email === "" ||
-        this.commentDetails.phoneNo === "" ||
-        this.commentDetails.message === ""
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-  },
-  methods: {
-    // getAllComments() { },
-    // showToast() {
-    //   this.$toast.success('Toast message')
-    // },
-
-    addNewComment() {
-      this.$refs.form.validate().then((success) => {
-        if (success) {
-          this.addLoading = true;
-          this.$axios
-            .post("/comments", {
-              firstName: this.commentDetails.firstName,
-              lastName: this.commentDetails.lastName,
-              email: this.commentDetails.email,
-              phoneNo: this.commentDetails.phoneNo,
-              message: this.commentDetails.message,
-            })
-            .then((response) => {
-              console.log(response);
-              this.addLoading = false;
-              this.isValid = true;
-              this.commentDetails = {
-                firstName: "",
-                lastName: "",
-                email: "",
-                phoneNo: "",
-                message: "",
-              };
-              // this.getAllComments(); // we will crea
-              // $toast.show({
-              //   type: 'success',
-              //   title: 'Success',
-              //   message: 'This is a successful toast',
-              // })
-              this.$nextTick(() => {
-                this.$refs.form.reset();
-              });
-              return true;
-            })
-            .catch((err) => {
-              this.addLoading = false;
-              // $toast.show({
-              //   type: 'danger',
-              //   title: 'Error',
-              //   message: 'Please specify an e-mail address',
-              // })
-              this.$nextTick(() => {
-                this.$refs.form.reset();
-              });
-              console.log(err);
-            });
-        } else {
-          console.log("Form Not Success");
-        }
-      });
-    },
-  },
-};
+});
 </script>
 
 <style>

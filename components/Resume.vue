@@ -4,8 +4,10 @@
       sepia:sepia sepia:text-white grid
       grid-cols-1
       text-sm
+      bg-white
       md:grid-cols-2
       lg:grid-cols-2
+      px-5 md:px-10 lg:px-20
       js-show-on-scroll
     ">
     <div class="pt-16">
@@ -65,5 +67,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
