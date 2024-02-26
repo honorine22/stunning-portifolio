@@ -15,6 +15,7 @@
     <form @submit.prevent="addNewComment()" class="w-full">
       <h2 class="
             text-black
+            font-bold
             sepia:text-white
             dark:text-white
             text-center

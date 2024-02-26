@@ -1,23 +1,11 @@
 <template>
-  <div id="resume" class="mt-4
-      dark:text-white dark:bg-gray-800
-      sepia:sepia sepia:text-white grid
-      grid-cols-1
-      text-sm
-      bg-white
-      md:grid-cols-2
-      lg:grid-cols-2
-      px-5 md:px-10 lg:px-20
-      js-show-on-scroll
-    ">
+  <div id="resume"
+    class="mt-4 dark:text-white dark:bg-gray-800 sepia:sepia sepia:text-white grid grid-cols-1 text-sm bg-white md:grid-cols-2 lg:grid-cols-2 px-5 md:px-10 lg:px-20 js-show-on-scroll">
     <div class="pt-16">
-      <h2>
-        Education Qualification ......
-      </h2>
+      <h2>Education Qualification ......</h2>
       <h2 class="font-bold py-4">My Education</h2>
       <div class="py-2" v-for="item in messages" :key="item.id">
-        <div class="bg-white dark:text-white dark:bg-gray-800
-        sepia:sepia sepia:text-white border-r-2 border-[#020D45]">
+        <div class="bg-white dark:text-white dark:bg-gray-800 sepia:sepia sepia:text-white border-r-2 border-[#020D45]">
           <h1 class="font-bold text-[#020D45]">{{ item.from }}</h1>
           <h1 class="text-[#0C0528]">
             {{ item.title }}
@@ -44,15 +32,16 @@ import Swal from "sweetalert2";
 export default {
   data() {
     return {
-      messages
+      messages,
     };
   },
   components: {
-    Button
+    Button,
   },
   methods: {
     viewHandler() {
-      axios.get(`${BASE_URL}/pdf`, { responseType: "blob" })
+      axios
+        .get(`${BASE_URL}/pdf`, { responseType: "blob" })
         .then((response) => {
           const file = new Blob([response.data], { type: "application/pdf" });
           const fileURL = URL.createObjectURL(file);

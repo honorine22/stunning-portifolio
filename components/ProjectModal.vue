@@ -28,9 +28,9 @@
                 chip.name }}</span>
           </div>
         </div>
-        <div class="flex justify-center gap-16">
-          <Button title="View Project" />
-          <Button title="Learn More" />
+        <div class="flex justify-wcenter gap-16">
+          <!-- <Button title="View Project" /> -->
+          <Button title="Learn More" @click="openProject" />
         </div>
       </main>
     </div>
@@ -48,6 +48,11 @@ export default {
     return {
       showModal: false
     };
+  },
+  methods: {
+    openProject() {
+      window.open(`${this.card.glink}`, '_blank');
+    }
   }
 };
 </script>

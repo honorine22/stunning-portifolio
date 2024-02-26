@@ -39,6 +39,7 @@ export default defineComponent({
 
         const toggleModal = () => {
             showModal.value = true;
+
         };
 
         return {

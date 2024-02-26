@@ -2,7 +2,7 @@
   <div class="
       dark:text-white sepia:text-white dark:bg-[#F0F5F7] 
       sepia:sepia sepia:text-white
-      my-8
+      my-14
       text-sm
       shadow
       bg-[#F1F4F7]

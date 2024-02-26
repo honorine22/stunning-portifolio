@@ -2,12 +2,12 @@ export const serviceCards = [
   {
     id: 1,
     title: "MY SERVICES",
-    snippet: "Here are some projects I have worked on recently.",
     cards: [
       {
         id: 1,
         image: "programming.png",
         title: "Web Development",
+        url: "/#services",
         description:
           "Looking to establish your online presence? Our web development services can bring your website to life - from sleek, static pages to powerful, feature-packed web applications.",
       },
@@ -62,11 +62,11 @@ export const serviceCards = [
         gitViewLink: "fff",
         glink: "https://github.com/Perusal-Rw/Dashboard.git",
         tech_names: [
-          { id: 7, name: "vue" },
-          { id: 8, name: "vuex" },
-          { id: 9, name: "mongoDb" },
-          { id: 10, name: "sockets" },
-          { id: 11, name: "bulma" },
+          { id: 7, name: "Typescript" },
+          { id: 8, name: "Angular" },
+          { id: 9, name: "CSS" },
+          { id: 10, name: "HTML" },
+          { id: 11, name: "MongoDB" },
           { id: 12, name: "nodeJs" },
         ],
       },
@@ -81,11 +81,10 @@ export const serviceCards = [
         gitViewLink: "ff",
         glink: "https://github.com/ShoppyOpenRca/React-E-Commerce-V2.git",
         tech_names: [
-          { id: 13, name: "vue" },
-          { id: 14, name: "vuex" },
+          { id: 13, name: "ReactJs" },
+          { id: 14, name: "Typescript" },
           { id: 15, name: "mongoDb" },
-          { id: 16, name: "sockets" },
-          { id: 17, name: "bulma" },
+          { id: 16, name: "Tailwind CSS" },
           { id: 18, name: "nodeJs" },
         ],
       },
@@ -154,7 +153,7 @@ export const messages = [
   {
     id: 7,
     from: "Rwanda Coding Academy",
-    message: `With a passion for programming languages, I've honed my skills and contributed to various projects, all of which are showcased on my GitHub account.`
+    message: `I've honed my skills and contributed to various projects, all of which are showcased on my GitHub account.`
   },
   {
     id: 8,

@@ -1,6 +1,6 @@
 <template>
   <div id="me" class="dark:text-white md:flex justify-around px-4 md:px-14 lg:px-14">
-    <div class="flex flex-col justify-center pt-16">
+    <div class="flex flex-col justify-center pt-20">
       <h1 class="text-lg text-[#42A5F5] font-bold uppercase">I AM HONORINE IGIRANEZA.</h1>
       <h1 class="text-lg font-bold py-2">A FULL STACK DEVELOPER</h1>
       <p class="text-sm pb-4 w-100 md:w-1/2 lg:w-1/2">
